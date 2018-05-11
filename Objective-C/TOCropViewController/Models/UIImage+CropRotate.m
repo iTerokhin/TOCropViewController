@@ -31,6 +31,11 @@
             alphaInfo == kCGImageAlphaPremultipliedFirst || alphaInfo == kCGImageAlphaPremultipliedLast);
 }
 
+-(UIImage *)croppedImageWithFrame:(CGRect)frame angle:(NSInteger)angle circularClip:(BOOL)circular
+{
+    return [self croppedImageWithFrame:frame angle:angle circularClip:circular scale:[UIScreen mainScreen].scale];
+}
+
 - (UIImage *)croppedImageWithFrame:(CGRect)frame angle:(NSInteger)angle circularClip:(BOOL)circular scale:(CGFloat)scale
 {
     UIImage *croppedImage = nil;
